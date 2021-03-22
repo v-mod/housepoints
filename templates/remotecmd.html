@@ -148,6 +148,40 @@
             <h3>Hi, {{ userId }} and welcome to HousePoints View</h3>
             {{ userId }}@housepointmanager<input type="text" placeholder="Enter Cmd" name="cmd" required>
         </form>
+        <div id="id01" class="modal">
+  
+          <form class="modal-content animate" action="/service/auth" method="post">
+            <div class="imgcontainer">
+              <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+              <img src="{{ url_for('static', filename= 'img_avatar2.png')}}" alt="Avatar" class="avatar">
+            </div>
+        
+            <div class="container">
+              <label for="uname"><b>{{ userId }}@housepointmanager</b></label>
+              <input type="text" placeholder="Enter Cmd" name="cmd" required>
+        
+                
+              <button type="submit">Execute</button>
+              <label>
+            </div>
+        
+            <div class="container" style="background-color:#f1f1f1">
+              <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            </div>
+          </form>
+        </div>
+        
+        <script>
+        // Get the modal
+        var modal = document.getElementById('id01');
+        
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        </script>
         </div>
                 <div class="main">
                   <div class="imgcontainer">
@@ -156,7 +190,7 @@
                       <p>Tudor: + <input type="text" placeholder="Enter Points" name="tudorPlus" value="0" required> - <input type="text" placeholder="Enter Points" name="tudorMinus"value="0" required> Current Points {{ tudor }}
                       <p>Lancaster: + <input type="text" placeholder="Enter Points" name="lancasterPlus"value="0" required> - <input type="text" placeholder="Enter Points" name="lancasterMinus"value="0" required> Current Points {{ lancaster }}
                       <p>Stuart: + <input type="text" placeholder="Enter Points" name="stuartPlus"value="0" required> - <input type="text" placeholder="Enter Points" name="stuartMinus"value="0" required> Current Points {{ stuart }}
-                      <p><button type="submit">Modify</button> <button type="button" class="cancelbtn" onclick = 'window.location.replace("/")'>Cancel</button> <button type="button" class="cancelbtn" onclick="window.location.replace('/service/housepoints/reset')">Reset</button>
+                      <p><button type="submit">Modify</button> <button type="button" class="cancelbtn" onclick = 'window.location.replace("/")'>Cancel</button> <button type="button" class="cancelbtn" onclick="window.location.replace('/service/housepoints/reset')">Reset</button> <button type="button" class="cancelbtn" onclick="document.getElementById('id01').style.display='block'">Remote Cmd</button>
                               </div>
                               </div>
         </body>
