@@ -17,7 +17,7 @@ def homepage():
     houseList = [{'house': 'York', 'points': int(york), 'color': 'yellow'}, {'house': 'Tudor', 'points': int(tudor), 'color': 'blue'}, {'house': 'Lancaster', 'points': int(lancaster), 'color': 'red'}, {'house': 'Stuart', 'points': int(stuart), 'color': 'green'}]
     sortedHouseList = housepointsManger.sort(houseList)
     winner=sortedHouseList[0]
-    winning = winner['name']+' with ' + winner['points']+ ' points'
+    winning = winner['house']+' with ' + winner['points']+ ' points'
     if 'UserId' in session:
         userId = session['UserId']
         return render_template('home.html', userId=userId,  houseList=sortedHouseList, winning=winning)
