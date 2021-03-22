@@ -145,7 +145,7 @@ span.psw {
 </header>
         <div class="main">
             <h3>Hi, {{ userId }} and welcome to HousePoints View</h3>
-            <h2>The current winner is {{ winning }}</h2>>
+            <h2>The current winner is {{ winning }}</h2>
             {% for house in houseList %}
               <p><h1 style="color:{{ house['color'] }}">{{ house['house'] }}:         {{ house['points'] }}  </h1>    
             {% endfor %}                 
