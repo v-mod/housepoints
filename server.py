@@ -9,6 +9,7 @@ userInfo = None
 userName = None
 @app.route('/')
 def homepage():
+    winning='no one'
     chouse=housepointsManger.view()
     york = chouse[0]
     stuart = chouse[3]
@@ -23,7 +24,7 @@ def homepage():
         return render_template('home.html', userId=userId,  houseList=sortedHouseList, winning=winning)
     else:
         userId= ''
-        return render_template('home.html', userId=userId,  houseList=sortedHouseList)
+        return render_template('home.html', userId=userId,  houseList=sortedHouseList, winning=winning)
 @app.route('/login')
 @app.route('/auth/login')
 def login():
