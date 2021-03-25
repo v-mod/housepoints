@@ -21,13 +21,14 @@ def homepage():
     if str(winner['points']) != '0':
         winning = winner['house']+' with ' + str(winner['points'])+ ' points'
     else:
+        winner={'house':winner['house'], 'points':1}
         winning='no one'
     if 'UserId' in session:
         userId = session['UserId']
-        return render_template('home.html', userId=userId,  houseList=sortedHouseList, winning=winning)
+        return render_template('home.html', userId=userId,  houseList=sortedHouseList, winning=winning, winningPoints=winner['points'])
     else:
         userId= ''
-        return render_template('home.html', userId=userId,  houseList=sortedHouseList, winning=winning)
+        return render_template('home.html', userId=userId,  houseList=sortedHouseList, winning=winning, winningPoints=winner['points'])
 @app.route('/login')
 @app.route('/auth/login')
 def login():

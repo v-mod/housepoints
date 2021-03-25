@@ -6,6 +6,10 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
     body {font-family: Arial, Helvetica, sans-serif;}
 
 /* Full-width input fields */
@@ -154,9 +158,22 @@ span.psw {
         <div class="main">
             <h3>Hi, {{ userId }} and welcome to HousePoints View</h3>
             <h2>The current winner is {{ winning }}</h2>
+            <table style="width:50%">
+              <tr>
+                <th style="width:25%">House</th>
+                <th style="width:25%">Points</th> 
+                <th style="width:50%"></th> 
+              </tr>
             {% for house in houseList %}
-              <p><h1 style="color:{{ house['color'] }}">{{ house['house'] }}:         {{ house['points'] }}  </h1>    
-            {% endfor %}                 
+              <tr>
+                <td style="width:25%">{{ house['house'] }}</td>
+                <td style="width:25%"> {{ house['points'] }}</td>
+                <td style="width:50%"> 
+                <div style="width:{{ (house['points']/winningPoints)*100 }}%;background-color: goldenrod;">
+                .</div>
+              </tr>  
+            {% endfor %}  
+            </table>                
                       </div>
                       <div id="id01" class="modal">
   

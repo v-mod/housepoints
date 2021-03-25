@@ -37,20 +37,20 @@ def sort(houseList):
         houseList.remove(top)
     return sortedHouseList
 def reset():
-    housepoints=open('/home/site/wwwroot/House-Data/Points.txt', 'r')
+    housepoints=open('House-Data/Points.txt', 'r')
     points=housepoints.read()
     housepoints.close()
-    housepoints=open('/home/site/wwwroot/House-Data/Points.txt', 'w')
+    housepoints=open('House-Data/Points.txt', 'w')
     housepoints.write('0,0,0,0')
     housepoints.close()
-    housepointsBackup=open('/home/site/wwwroot/House-Data/BackupPoints.txt', 'w')
+    housepointsBackup=open('House-Data/BackupPoints.txt', 'w')
     housepointsBackup.write(points)
     housepointsBackup.close()
 def restore():
-    housepointsBackup=open('/home/site/wwwroot/House-Data/BackupPoints.txt', 'r')
+    housepointsBackup=open('House-Data/BackupPoints.txt', 'r')
     points=housepointsBackup.read()
     housepointsBackup.close()
-    housepoints=open('/home/site/wwwroot/House-Data/Points.txt', 'w')
+    housepoints=open('House-Data/Points.txt', 'w')
     housepoints.write(points)
     housepoints.close()
 def cmd(cmd):
