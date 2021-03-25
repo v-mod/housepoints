@@ -1,5 +1,5 @@
 def modify(to_modify):
-    pointread=open(r'./House-Data/Points.txt', 'r')
+    pointread=open(r'House-Data/Points.txt', 'r')
     current_points=pointread.read()
     points=current_points.split(',')
     york_add=int(to_modify[0])-int(to_modify[1])
@@ -17,11 +17,11 @@ def modify(to_modify):
     tudor=tudor_current+tudor_add
     stuart=stuart_add+stuart_current
     to_write=str(york)+','+str(tudor)+','+str(lancaster)+','+str(stuart)
-    pointwrite=open(r'./House-Data/Points.txt', 'w')
+    pointwrite=open(r'House-Data/Points.txt', 'w')
     pointwrite.write(to_write)
     pointwrite.close()
 def view():
-    pointread=open(r'./House-Data/Points.txt', 'r') 
+    pointread=open(r'House-Data/Points.txt', 'r') 
     current_points=pointread.read()
     points=current_points.split(',')
     pointread.close()

@@ -76,7 +76,7 @@ def service_house_points_modify():
     return redirect('/')
 @app.route('/auth/signup/<signup_key>')
 def signup(signup_key):
-    keys=open('/home/site/wwwroot/User-Info/signup_keys.keys', 'r')
+    keys=open(r'User-Info/signup_keys.keys', 'r')
     signup_keys=keys.read()
     keys.close()
     if signup_key in signup_keys:

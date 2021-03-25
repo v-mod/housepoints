@@ -154,6 +154,34 @@
           </ul>
         </nav> 
     </header>
+    <div id="id02" class="modal">
+  
+      <form class="modal-content animate" action="/service/auth" method="post">
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+        </div>
+    
+        <div class="container">
+            <iframe src="/embed/calculator" frameborder="0"></iframe>
+        </div>
+    
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+        </div>
+      </form>
+    </div>
+    
+    <script>
+    // Get the modal
+    var modal = document.getElementById('id02');
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    </script>
         <div class="main">
           <div class="imgcontainer">
             <h3>Hi, {{ userId }} and welcome to the HousePoints management system</h3>
@@ -162,7 +190,7 @@
               <p>Tudor: + <input type="text" placeholder="Enter Points" name="tudorPlus" value="0" required> - <input type="text" placeholder="Enter Points" name="tudorMinus"value="0" required> Current Points {{ tudor }}
               <p>Lancaster: + <input type="text" placeholder="Enter Points" name="lancasterPlus"value="0" required> - <input type="text" placeholder="Enter Points" name="lancasterMinus"value="0" required> Current Points {{ lancaster }}
               <p>Stuart: + <input type="text" placeholder="Enter Points" name="stuartPlus"value="0" required> - <input type="text" placeholder="Enter Points" name="stuartMinus"value="0" required> Current Points {{ stuart }}
-              <p><button type="submit">Modify</button> <button type="button" class="cancelbtn" onclick = 'window.location.replace("/")'>Cancel</button> <button type="button" class="cancelbtn" onclick="window.location.replace('/service/housepoints/reset')">Reset</button> <button type="button" class="cancelbtn" onclick="Window.location.replace('/embed/Calculator')">Calculator</button> 
+              <p><button type="submit">Modify</button> <button type="button" class="cancelbtn" onclick = 'window.location.replace("/")'>Cancel</button> <button type="button" class="cancelbtn" onclick="window.location.replace('/service/housepoints/reset')">Reset</button> <button type="button" class="cancelbtn" onclick="document.getElementById('id02').style.display='block'">Calculator</button> 
                       </div>
                       </div>
 </body>

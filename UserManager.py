@@ -8,8 +8,8 @@ class User:
 class UserManager:
 
     def Auth(self,userName,password):
-        path = '/home/site/wwwroot/User-Info/'
-        if os.path.isfile(r'./User-Info/' + userName + '/'  + 'Me.txt'):
+        path = 'User-Info/'
+        if os.path.isfile('User-Info/' + userName + '/'  + 'Me.txt'):
             f = open(path + userName + '/'+ 'Me.txt', 'r')
             data = f.read()
             userData = data.split(',')
@@ -29,8 +29,8 @@ class UserManager:
         me.write(userInfo)
         me.close()
     def getDetails(self, userName):
-        path = '/home/site/wwwroot/User-Info/'
-        if os.path.isfile(r'./User-Info/' + userName + '/'  + 'Me.txt'):
+        path = 'User-Info/'
+        if os.path.isfile(r'User-Info/' + userName + '/'  + 'Me.txt'):
             f = open(path + userName + '/'+ 'Me.txt', 'r')
             data = f.read()
             userData = data.split(',')
@@ -41,13 +41,13 @@ class UserManager:
     def change_password(self,uname, new_pwd):
         userData=self.getDetails(uname)
         newData=userData[0]+','+new_pwd+','+userData[2]
-        data=open(r'./User-Info/' + uname + '/'  + 'Me.txt','w')
+        data=open(r'User-Info/' + uname + '/'  + 'Me.txt','w')
         data.write(newData)
         data.close()
     
     def KeyAuth(self, userName,password):
-        path = '/home/site/wwwroot/User-Info/'
-        if os.path.isfile(r'./User-Info/' + userName + '/'  + 'Me.txt'):
+        path = 'User-Info/'
+        if os.path.isfile(r'User-Info/' + userName + '/'  + 'Me.txt'):
             f = open(path + userName + '/'+ 'Me.txt', 'r')
             data = f.read()
             userData = data.split(',')
