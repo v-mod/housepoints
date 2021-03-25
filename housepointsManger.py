@@ -59,4 +59,4 @@ def cmd(cmd):
     elif cmd == 'house.reset':
         reset()
     else:
-        return 'UnKnown cmd'
+        return 'Unknown cmd'

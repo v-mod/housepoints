@@ -166,10 +166,10 @@ span.psw {
               </tr>
             {% for house in houseList %}
               <tr>
-                <td style="width:25%">{{ house['house'] }}</td>
-                <td style="width:25%"> {{ house['points'] }}</td>
-                <td style="width:50%"> 
-                <div style="width:{{ (house['points']/winningPoints)*100 }}%;background-color: goldenrod;">
+              <td style="width:25%;color:{{ house['color'] }}">{{ house['house'] }}</td>
+                <td style="width:25%;color:{{ house['color'] }}"> {{ house['points'] }}</td>
+                <td style="width:50%;color:{{ house['color'] }}"> 
+                <div style="width:{{ (house['points']/winningPoints)*100 }}%;background-color:{{ house['color'] }}">
                 .</div>
               </tr>  
             {% endfor %}  
