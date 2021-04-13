@@ -15,7 +15,7 @@ def homepage():
     stuart = chouse[3]
     lancaster = chouse[2]
     tudor = chouse[1]
-    houseList = [{'house': 'York', 'points': int(york), 'color': 'yellow'}, {'house': 'Tudor', 'points': int(tudor), 'color': 'blue'}, {'house': 'Lancaster', 'points': int(lancaster), 'color': 'red'}, {'house': 'Stuart', 'points': int(stuart), 'color': 'green'}]
+    houseList = [{'house': 'York', 'points': int(york), 'color': 'yellow'}, {'house': 'Tudor', 'points': int(tudor), 'color': 'blue'}, {'house': 'Lancaster', 'points': int(lancaster), 'color': 'red'}, {'house': 'Stuart', 'points': int(stuart), 'color': '#00FF00'}]
     sortedHouseList = housepointsManger.sort(houseList)
     winner=sortedHouseList[0]
     if str(winner['points']) != '0':
