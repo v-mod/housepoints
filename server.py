@@ -29,7 +29,7 @@ def homepage():
     house4 = chouse[3]
     house3 = chouse[2]
     house2 = chouse[1]
-    houseList = [{'house': house1Name, 'points': int(house1), 'color': 'yellow'}, {'house': house2Name, 'points': int(house2), 'color': 'blue'}, {'house': house3Name, 'points': int(house3), 'color': 'red'}, {'house': house1Name, 'points': int(house4), 'color': '#00FF00'}]
+    houseList = [{'house': house1Name, 'points': int(house1), 'color': 'yellow'}, {'house': house2Name, 'points': int(house2), 'color': 'blue'}, {'house': house3Name, 'points': int(house3), 'color': 'red'}, {'house': house4Name, 'points': int(house4), 'color': '#00FF00'}]
     sortedHouseList = housepointsManger.sort(houseList)
     winner=sortedHouseList[0]
     if str(winner['points']) != '0':
