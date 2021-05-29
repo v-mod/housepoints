@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<style>
+    body{
+        background-color: darkslategrey;
+        color: darkslategrey
+
+    }
+</style>
+ <body>
+        <div class="main">
+            {% for house in houseList %}
+        <p><h1 style="color:{{ house['color'] }}">{{ house['house'] }}:         {{ house['points'] }}  </h1>    
+            {% endfor %}   
+            
+                      </div>
+</body>
