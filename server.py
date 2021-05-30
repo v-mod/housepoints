@@ -41,7 +41,7 @@ def homepage():
     winner=sortedHouseList[0]
     if str(winner['points']) != '0':
         winning = winner['house']+' with ' + str(winner['points'])+ ' points'
-    elif (house1 + house2 + house3 + house4)/4 == house1 and (house1 + house2 + house3 + house4)/4 == house2 and (house1 + house2 + house3 + house4)/4 == house3 and (house1 + house2 + house3 + house4)/4 == house4:
+    elif (int(house1) + int(house2) + int(house3) + int(house4))/4 == house1 and (int(house1) + int(house2) + int(house3) + int(house4))/4 == house2 and (int(house1) + int(house2) + int(house3) + int(house4))/4 == house3 and (int(house1) + int(house2) + int(house3) + int(house4))/4 == house4:
         winning='no one in particular: everyone has the same score'
     else:
         winner={'house':winner['house'], 'points':1}
@@ -177,6 +177,10 @@ def restoreDataFromBR(points):
     pointsFile=open(r'House-Data/Points.txt','w')
     pointsFile.write(points)
     pointsFile.close()
+# Help page
+@app.route('/help')
+def help():
+    return render_template('help.html')
 # Running the flask web app if this has been run as the main aplication
 if __name__ == '__main__':
     app.run(debug=True,  host='0.0.0.0')
