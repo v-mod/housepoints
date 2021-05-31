@@ -145,8 +145,9 @@
           <ul>
             <li><a href="/">Home</a></li>
             {% if 'UserId' in session %} 
-            <li><u>Manage</a></u></li>
             <li><a href="/profile">Profile</a></li>
+            <li><u>Manage</a></u></li>
+            <li><a href="/help">Help</a></li>
             <li><a href="/auth/logout">Logout</a></li>
             {% else %}
             <li><a href="/auth/login">Login</a></li>
